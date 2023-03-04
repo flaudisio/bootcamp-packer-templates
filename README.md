@@ -33,7 +33,7 @@ $ packer build .
 If applicable, use `-only` to build specific images:
 
 ```console
-$ packer build -only amd64 .
+$ packer build -only amazon-ebs.amd64 .
 ```
 
 ## Conventions
