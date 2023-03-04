@@ -11,15 +11,10 @@ readonly VenvDir="/tmp/packer-ansible-venv"
 export DEBIAN_FRONTEND=noninteractive
 
 
-_run_as_root()
-{
-    sudo -H "$@"
-}
-
 install_system_deps()
 {
-    _run_as_root apt update -q
-    _run_as_root apt install -q -y --no-install-recommends python3 python3-venv git make
+    sudo -H apt update -q
+    sudo -H apt install -q -y --no-install-recommends python3 python3-venv git make
 }
 
 install_ansible()
