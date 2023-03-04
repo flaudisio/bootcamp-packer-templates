@@ -1,0 +1,69 @@
+# ------------------------------------------------------------------------------
+# OPERATING SYSTEMS
+# ------------------------------------------------------------------------------
+
+### macOS/Linux/Windows ###
+
+.DS_Store
+.AppleDouble
+.LSOverride
+
+.Trash-*
+
+Thumbs.db
+[Dd]esktop.ini
+*.lnk
+
+# ------------------------------------------------------------------------------
+# EDITORS
+# ------------------------------------------------------------------------------
+
+### Vim ###
+
+# Swap
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+[._]s[a-rt-v][a-z]
+[._]ss[a-gi-z]
+[._]sw[a-p]
+
+### JetBrains (IntelliJ, PyCharm, etc) ###
+
+.idea
+*.iml
+*.ipr
+*.iws
+/out
+
+### Sublime Text ###
+
+*.sublime-project
+*.sublime-workspace
+
+### VSCode ###
+
+.vscode/**
+!.vscode/README.md
+!.vscode/extensions.json
+!.vscode/recommended-*.json
+!.vscode/setup.sh
+
+# ------------------------------------------------------------------------------
+# ANSIBLE
+# ------------------------------------------------------------------------------
+
+*.retry
+
+# ------------------------------------------------------------------------------
+# PACKER
+# ------------------------------------------------------------------------------
+
+# Cache objects
+packer_cache/
+
+# Crash log
+crash.log
+
+### Packer Patch ###
+# ignore temporary output files
+output-*/
