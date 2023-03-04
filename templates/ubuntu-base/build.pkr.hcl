@@ -27,8 +27,7 @@ locals {
 # ------------------------------------------------------------------------------
 
 data "amazon-ami" "ubuntu-amd64" {
-  region = var.region
-
+  region      = var.region
   most_recent = true
   owners      = var.ami_owners
 
@@ -42,8 +41,7 @@ data "amazon-ami" "ubuntu-amd64" {
 }
 
 data "amazon-ami" "ubuntu-arm64" {
-  region = var.region
-
+  region      = var.region
   most_recent = true
   owners      = var.ami_owners
 
@@ -61,12 +59,9 @@ data "amazon-ami" "ubuntu-arm64" {
 # ------------------------------------------------------------------------------
 
 source "amazon-ebs" "ubuntu-common" {
-  region = var.region
-
+  region          = var.region
   ami_description = local.image_description
-
-  ssh_username = "ubuntu"
-
+  ssh_username    = "ubuntu"
   run_tags        = local.build_run_tags
   run_volume_tags = local.build_run_tags
 }
