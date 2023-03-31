@@ -21,12 +21,12 @@ variable "ami_filters" {
 
 variable "instance_type_amd64" {
   type    = string
-  default = "t3.micro"
+  default = "t3a.small"
 }
 
 variable "instance_type_arm64" {
   type    = string
-  default = "t4g.micro"
+  default = "t4g.small"
 }
 
 variable "region" {
