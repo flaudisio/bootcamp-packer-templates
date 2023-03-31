@@ -16,7 +16,7 @@ locals {
     created-by = "packer"
   }
 
-  build_tags = {
+  build_common_tags = {
     created-by              = "packer"
     "packer:packer-version" = packer.version
   }
@@ -79,7 +79,7 @@ build {
     instance_type = var.instance_type_amd64
 
     tags = merge(
-      local.build_tags,
+      local.build_common_tags,
       {
         Name                      = local.ami_name_amd64
         "packer:source-ami-id"    = data.amazon-ami.ubuntu-amd64.id
@@ -97,7 +97,7 @@ build {
     instance_type = var.instance_type_arm64
 
     tags = merge(
-      local.build_tags,
+      local.build_common_tags,
       {
         Name                      = local.ami_name_arm64
         "packer:source-ami-id"    = data.amazon-ami.ubuntu-arm64.id
