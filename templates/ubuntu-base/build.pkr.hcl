@@ -8,8 +8,8 @@ locals {
   image_name_prefix = "ubuntu-base-${var.ubuntu_version}"
   image_description = "Base image for Ubuntu ${var.ubuntu_version}"
 
-  ami_name_amd64 = format("%s-amd64-%s", local.image_name_prefix, local.datetime)
-  ami_name_arm64 = format("%s-arm64-%s", local.image_name_prefix, local.datetime)
+  ami_name_amd64 = format("%s-%s-amd64", local.image_name_prefix, local.datetime)
+  ami_name_arm64 = format("%s-%s-arm64", local.image_name_prefix, local.datetime)
 
   build_run_tags = {
     Name       = "packer-builder-for-${local.image_name_prefix}"
