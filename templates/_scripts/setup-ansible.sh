@@ -28,7 +28,7 @@ install_ansible()
     export PATH="${PATH}:${VenvDir}/bin"
 }
 
-run_ansible_playbooks()
+run_ansible()
 {
     pushd "$RepoDir"
 
@@ -49,7 +49,7 @@ main()
 
     install_system_deps
     install_ansible
-    run_ansible_playbooks
+    run_ansible
 }
 
 
