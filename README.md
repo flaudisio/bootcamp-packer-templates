@@ -11,7 +11,7 @@
 Clone the repository:
 
 ```console
-$ git clone https://github.com/flaudisio/packer-templates.git
+$ git clone https://github.com/flaudisio/bootcamp-packer-templates.git
 $ cd packer-templates/
 ```
 
@@ -38,9 +38,9 @@ $ packer build -only amazon-ebs.amd64 .
 
 ## Conventions
 
-- All manifest filenames **must** end with `.pkr.hcl`
+- Packer manifest filenames end with `.pkr.hcl`
 
-- A template **must** have the following files:
+- Templates are organized using the following files:
   - `versions.pkr.hcl`: required Packer version and plugins (if applicable)
   - `variables.pkr.hcl`: template variables
   - `build.pkr.hcl`: locals, data sources, sources and builds
