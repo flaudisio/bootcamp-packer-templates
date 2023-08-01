@@ -7,7 +7,7 @@ set -x
 Count=0
 MaxRetries=300
 
-while [[ ! -f /var/lib/cloud/instance/boot-finished ]] ; do
+until [[ -f /var/lib/cloud/instance/boot-finished ]] ; do
     Count=$(( Count + 1 ))
 
     if [[ $Count -eq $MaxRetries ]] ; then

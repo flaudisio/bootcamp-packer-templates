@@ -8,13 +8,18 @@ readonly RepoUrl="https://github.com/flaudisio/bootcamp-ansible-playbooks.git"
 readonly RepoDir="/tmp/packer-ansible-playbooks"
 readonly VenvDir="/tmp/packer-ansible-venv"
 
-export DEBIAN_FRONTEND=noninteractive
+export DEBIAN_FRONTEND="noninteractive"
 
 
 install_system_deps()
 {
-    sudo -H apt update -q
-    sudo -H apt install -q -y --no-install-recommends python3 python3-venv git make
+    sudo -H apt-get update --quiet
+
+    sudo -H apt-get install --quiet --yes --no-install-recommends \
+        git \
+        make \
+        python3 \
+        python3-venv
 }
 
 install_ansible()

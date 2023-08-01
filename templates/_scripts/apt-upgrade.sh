@@ -6,5 +6,5 @@ set -x
 
 export DEBIAN_FRONTEND=noninteractive
 
-sudo -H apt update --quiet
-sudo -H apt upgrade --quiet --yes
+sudo -H apt-get update --quiet
+sudo -H apt-get upgrade --quiet --yes
