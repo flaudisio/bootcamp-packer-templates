@@ -16,9 +16,13 @@ locals {
     created-by = "packer"
   }
 
+  # Ref: https://developer.hashicorp.com/packer/plugins/builders/amazon/ebs#build-shared-information-variables
   build_common_tags = {
-    created-by              = "packer"
-    "packer:packer-version" = packer.version
+    created-by                = "packer"
+    "packer:packer-version"   = packer.version
+    "packer:source-ami-id"    = "{{ .SourceAMI }}"
+    "packer:source-ami-name"  = "{{ .SourceAMIName }}"
+    "packer:source-ami-owner" = "{{ .SourceAMIOwner }}"
   }
 }
 
@@ -62,6 +66,7 @@ source "amazon-ebs" "ubuntu-common" {
   region          = var.region
   ami_description = local.image_description
   ssh_username    = "ubuntu"
+
   run_tags        = local.build_run_tags
   run_volume_tags = local.build_run_tags
 }
@@ -81,10 +86,7 @@ build {
     tags = merge(
       local.build_common_tags,
       {
-        Name                      = local.ami_name_amd64
-        "packer:source-ami-id"    = data.amazon-ami.ubuntu-amd64.id
-        "packer:source-ami-name"  = data.amazon-ami.ubuntu-amd64.name
-        "packer:source-ami-owner" = data.amazon-ami.ubuntu-amd64.owner
+        Name = local.ami_name_amd64
       }
     )
   }
@@ -99,10 +101,7 @@ build {
     tags = merge(
       local.build_common_tags,
       {
-        Name                      = local.ami_name_arm64
-        "packer:source-ami-id"    = data.amazon-ami.ubuntu-arm64.id
-        "packer:source-ami-name"  = data.amazon-ami.ubuntu-arm64.name
-        "packer:source-ami-owner" = data.amazon-ami.ubuntu-arm64.owner
+        Name = local.ami_name_arm64
       }
     )
   }
