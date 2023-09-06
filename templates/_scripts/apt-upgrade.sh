@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
+set -x
 set -e
 set -u
-set -x
 
 export DEBIAN_FRONTEND=noninteractive
 
