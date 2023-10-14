@@ -26,6 +26,7 @@ $ export AWS_SECRET_ACCESS_KEY=<SECRET_KEY>
 Validate and build the images:
 
 ```console
+$ packer init .
 $ packer validate .
 $ packer build .
 ```
